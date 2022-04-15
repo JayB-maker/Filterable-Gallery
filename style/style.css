@@ -134,7 +134,14 @@ body .container .images-gallery .image:hover img {
 
 @media screen and (max-width: 600px) {
   body .container {
-    width: 96%;
+    width: 94%;
+  }
+  body .container .search-bar {
+    width: 332px;
+  }
+  body .container .images-gallery .image {
+    height: 200px;
+    width: 150px;
   }
 }
 /*# sourceMappingURL=style.css.map */
