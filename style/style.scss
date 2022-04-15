@@ -116,3 +116,19 @@ body{
         }
     }
 }
+
+@media screen and (max-width: 1024px){
+    body{
+        .container{
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    body{
+        .container{
+            width: 96%;
+        }
+    }
+}

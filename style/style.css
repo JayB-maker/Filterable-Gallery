@@ -125,4 +125,16 @@ body .container .images-gallery .image:hover img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
+@media screen and (max-width: 1024px) {
+  body .container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body .container {
+    width: 96%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
