@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    border: 0;
+}
+
+body{
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    &::after{
+        position: absolute;
+        content: "";
+        height: 240px;
+        width: 240px;
+        background: teal;
+        opacity: 50%;
+        filter: blur(100px);
+        border-radius: 50%;
+        top: 20rem;
+        right: 10rem;
+        position: fixed;
+        z-index: -9;
+    }
+
+    &::before{
+        position: absolute;
+        content: "";
+        height: 240px;
+        width: 240px;
+        background: yellow;
+        opacity: 60%;
+        filter: blur(100px);
+        border-radius: 50%;
+        top: 10rem;
+        left: 10rem;
+        position: fixed;
+        z-index: -9;
+    }
+
+    .container{
+        width: 60%;
+        margin: 0 auto;
+
+        .search-bar{
+            position: relative;
+            width: 360px;
+            height: 2rem;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+
+    
+            i{
+                position: absolute;
+                font-size: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+                color: whitesmoke;
+                left: 0.4rem;
+            }
+
+            input{
+                width: 100%;
+                height: 100%;
+                color: white;
+                background: black;
+                border-radius: 0.5rem;
+                padding: 0 2rem;
+            }
+        }
+
+        .images-gallery{
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .image{
+                overflow: hidden;
+                width: 180px;
+                height: 240px;
+                position: relative;
+                border-radius: 0.5rem;
+                //transition: 1000ms;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    border-radius: 0.5rem;
+                    filter: saturate(0.1);
+                    transition: 400ms;
+                }
+
+                p{
+                    display: none;
+                    position: absolute;
+                    z-index: 1;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    bottom: 0.6rem;
+                    left: 0.3rem;
+                }
+
+                &:hover{
+                    img{
+                        filter: saturate(1);
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
