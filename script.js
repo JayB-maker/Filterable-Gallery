@@ -1,5 +1,6 @@
 const searchBar = document.getElementById('search')
-      imageBox = document.querySelectorAll('.image');
+      imageBox = document.querySelectorAll('.image')
+      footerBar = document.getElementById('footer-bar');
 
       searchBar.addEventListener('keyup', e => {
           //console.log(e);
@@ -15,7 +16,8 @@ const searchBar = document.getElementById('search')
                 else{
                     imageBox.forEach(image => {
                         if(enteredValue === image.dataset.name){
-                            return image.style.display = "block";
+                            image.style.display = "block";
+                            footerBar.style.display = "none";
                         }
 
                         else{
@@ -33,6 +35,7 @@ const searchBar = document.getElementById('search')
 
             imageBox.forEach(image => {
                 image.style.display = "block";
+                footerBar.style.display = "block";
             })
         })
          

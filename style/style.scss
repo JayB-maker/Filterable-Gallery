@@ -6,11 +6,14 @@
     border: 0;
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
+
 body{
     position: relative;
     font-family: 'Open Sans', sans-serif;
     padding-top: 2rem;
-    padding-bottom: 2rem;
 
     &::after{
         position: absolute;
@@ -46,12 +49,14 @@ body{
         width: 60%;
         margin: 0 auto;
 
+
         .search-bar{
             position: relative;
             width: 360px;
             height: 2rem;
             margin: 0 auto;
             margin-bottom: 3rem;
+            animation: search-motion 1s linear;
 
     
             i{
@@ -71,6 +76,17 @@ body{
                 border-radius: 0.5rem;
                 padding: 0 2rem;
             }
+
+            @keyframes search-motion {
+                from{
+                    margin-top: -4rem;
+                    opacity: 0%;
+                }
+                to{
+                    margin-top: 0rem;
+                    opacity: 100%;
+                }
+            }
         }
 
         .images-gallery{
@@ -78,13 +94,14 @@ body{
             gap: 1.5rem;
             flex-wrap: wrap;
             justify-content: center;
-
+            
             .image{
                 overflow: hidden;
                 width: 180px;
                 height: 240px;
                 position: relative;
                 border-radius: 0.5rem;
+                box-shadow: 0 0 1rem rgba(0, 128, 128, 0.3);
                 //transition: 1000ms;
 
                 img{
@@ -115,6 +132,32 @@ body{
             }
         }
     }
+
+    footer{
+        height: 4rem;
+        margin-top: 4rem;
+        width: 100%;
+        color: whitesmoke;
+        background: black;
+        padding: 1rem;
+        position: static;
+        bottom: 0;
+
+        .container{
+            display: flex;
+            place-content: space-between;
+            align-items: center;
+
+            span:nth-child(1){
+                font-size: 1.2rem;
+                font-weight: 800;
+            }
+            span:nth-child(2), span:nth-child(3){
+                font-size: 0.8rem;
+                font-weight: normal;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1024px){
@@ -139,6 +182,14 @@ body{
                     height: 200px;
                     width: 150px;
                 }
+            }
+        }
+
+        footer{
+            height: fit-content;
+            .container{
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     }

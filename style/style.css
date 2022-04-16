@@ -7,11 +7,14 @@
   border: 0;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   position: relative;
   font-family: 'Open Sans', sans-serif;
   padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 
 body::after {
@@ -57,6 +60,8 @@ body .container .search-bar {
   height: 2rem;
   margin: 0 auto;
   margin-bottom: 3rem;
+  -webkit-animation: search-motion 1s linear;
+          animation: search-motion 1s linear;
 }
 
 body .container .search-bar i {
@@ -78,6 +83,28 @@ body .container .search-bar input {
   padding: 0 2rem;
 }
 
+@-webkit-keyframes search-motion {
+  from {
+    margin-top: -4rem;
+    opacity: 0%;
+  }
+  to {
+    margin-top: 0rem;
+    opacity: 100%;
+  }
+}
+
+@keyframes search-motion {
+  from {
+    margin-top: -4rem;
+    opacity: 0%;
+  }
+  to {
+    margin-top: 0rem;
+    opacity: 100%;
+  }
+}
+
 body .container .images-gallery {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,6 +123,8 @@ body .container .images-gallery .image {
   height: 240px;
   position: relative;
   border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0 1rem rgba(0, 128, 128, 0.3);
+          box-shadow: 0 0 1rem rgba(0, 128, 128, 0.3);
 }
 
 body .container .images-gallery .image img {
@@ -126,6 +155,37 @@ body .container .images-gallery .image:hover img {
           transform: scale(1.1);
 }
 
+body footer {
+  height: 4rem;
+  margin-top: 4rem;
+  width: 100%;
+  color: whitesmoke;
+  background: black;
+  padding: 1rem;
+  position: static;
+  bottom: 0;
+}
+
+body footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body footer .container span:nth-child(1) {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+body footer .container span:nth-child(2), body footer .container span:nth-child(3) {
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
 @media screen and (max-width: 1024px) {
   body .container {
     width: 90%;
@@ -142,6 +202,18 @@ body .container .images-gallery .image:hover img {
   body .container .images-gallery .image {
     height: 200px;
     width: 150px;
+  }
+  body footer {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  body footer .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.5rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
